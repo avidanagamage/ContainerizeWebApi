@@ -49,7 +49,7 @@ jobs:
               aws configure set aws_access_key_id > echo $AWS_ACCESS_KEY_ID
               aws configure set aws_secret_access_key > echo $AWS_SECRET_ACCESS_KEY
               aws configure set default.region > echo $AWS_REGION
-              aws ecr get-login-password --region ap-south-1 | sudo docker login --username AWS --password-stdin 586367578102.dkr.ecr.ap-south-1.amazonaws.com
+              aws ecr get-login-password --region ap-southeast-1 | sudo docker login --username AWS --password-stdin 669048005368.dkr.ecr.ap-southeast-1.amazonaws.com
               sudo docker rm -f `sudo docker ps -q` 
               sudo docker run -d -p 8080:80 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
             host: ${{ secrets.PUB_IP }}
